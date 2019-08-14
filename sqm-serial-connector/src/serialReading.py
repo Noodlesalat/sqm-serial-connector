@@ -17,6 +17,6 @@ class SerialReading:
 
     def getReading(self):
         # send command to SQM
-        self.connection.write(b'rx')
+        self.connection.write(b'Rx')
         # get reading
         return self.connection.readline()
