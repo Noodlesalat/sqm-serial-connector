@@ -2,6 +2,15 @@ import time
 import logging
 from src.serialReading import SerialReading
 from src.TCP_Connection import TCP_Connection
+import configparser
+import io
+
+# enable logging
+logging.basicConfig(level=logging.DEBUG)
+
+# read config file
+config = configparser.ConfigParser()
+config.read("../config.ini")
 
 # connect to SQM
 serial = SerialReading()
@@ -18,4 +27,4 @@ while(True):
 
     connection.sendReading(reading)
 
-    time.sleep(2)
+    time.sleep(int(config['sqm']['interval']))
