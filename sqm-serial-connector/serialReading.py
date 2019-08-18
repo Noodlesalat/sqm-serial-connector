@@ -9,7 +9,7 @@ class SerialReading:
     def __init__(self):
         # load config file
         self.config = configparser.ConfigParser()
-        self.config.read("../config.ini")
+        self.config.read("config.ini")
 
     def initializeConnection(self):
         # connect tono serial port

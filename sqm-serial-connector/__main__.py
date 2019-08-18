@@ -1,7 +1,7 @@
 import time
 import logging
-from src.serialReading import SerialReading
-from src.TCP_Connection import TCP_Connection
+from .serialReading import SerialReading
+from .TCP_Connection import TCP_Connection
 import configparser
 import io
 
@@ -10,7 +10,7 @@ logging.basicConfig(level=logging.DEBUG)
 
 # read config file
 config = configparser.ConfigParser()
-config.read("../config.ini")
+config.read("config.ini")
 
 # connect to SQM
 serial = SerialReading()
